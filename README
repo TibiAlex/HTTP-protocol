@@ -1,0 +1,53 @@
+Autor: Buzera Tiberiu 323CA
+Titlu: Tema 3 Client Web. Comunicaţie cu REST API.
+
+Obiectivul temei a fost realizarea unui client in limbajul C/C++ care sa
+interactioneze cu un REST API.
+
+Serverul expune un API (Application Programmable Interface) de tip REST
+(Representational State Transfer). Puteţi să vă gândiţi la el ca la o cutie
+neagră ce are expuse o serie de intrări, reprezentate de rute HTTP. 
+În urma cererilor HTTP, serverul efectuează o acţiune. În contextul temei,
+serverul simulează o bibliotecă online şi este deja complet implementat.
+
+Clientul este un program scris în C/C++ care acceptă comenzi de la tastatură
+şi trimite, în funcţie de comandă, cereri către server. Scopul lui este de a
+funcţiona ca o interfaţă (UI) cu biblioteca virtuală.
+
+Clientul interpreteaza comenzi de la tastatură pentru a putea interacţiona cu
+serverul. În urma primirii unei comenzi, clientul formeaza obiectul json 
+(dacă e cazul), executa cererea către server şi afişaza răspunsul acestuia
+(de succes sau de eroare). Procesul se repeta până la introducerea comenzii exit.
+
+Comanda register inregistreaza contul unui client, acesta efisaza eroare daca
+exista deja clientul.
+
+Comanda login conecteaza un cont la server si da eroare in cazul in care nu
+exista contul, in cazul in care exista retine cookie-ul.
+
+Comanda entry_library verifica daca exista un client logat, caz in care
+conecteaza clientul si returneaza un token.Daca nu exista niciun client
+conectat va afisa eroare.
+
+Comanda get_books afisaza toate cartile pe care le are un utilizator, 
+sau mesajul "Nu exista carti de afisat!" in cazul in care nu are nicio carte 
+sau eroare in cazul in care nu este conectat niciun client.
+
+Comanda get_book afisaza o carte anume dupa id-ul primit de la tastatura
+sau eroare daca nu exista cartea sau daca nu este niciun client conectat.
+
+Comanda add_book adauga o noua carte pentru un utilizator sau returneaza eroare
+daca nu este conectat niciun utilizator.
+
+Comanda delete_book primeste un id si sterge o carte de la un utilizator sau
+afisaza eroare daca nu exista cartea cu id-ul respectiv sau daca utilizatorul
+nu este conectat.
+
+Comanda logout deconecteaza un utilizator de la server sau da eroare daca nu 
+exista niciun utilizator conectat.
+
+Comanda exit incheie programul.
+
+Pentru implementarea temei m-am folosit de scheletul laboratorului 10, care se 
+gaseste pe site-ul https://ocw.cs.pub.ro/courses/pc/laboratoare/10.
+
